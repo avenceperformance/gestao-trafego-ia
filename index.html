@@ -790,7 +790,6 @@ footer{border-top:1px solid var(--line);padding:28px 0 calc(100px + env(safe-are
 const ck=new URL(CHECKOUT_URL);new URLSearchParams(location.search).forEach((v,k)=>ck.searchParams.set(k,v));
 document.querySelectorAll(".buy").forEach(a=>{
   a.href=ck.toString();
-  a.addEventListener("click",()=>{if(window.fbq)fbq("track","InitiateCheckout",{value:97,currency:"BRL"})});
 });
 /* pixel */
 if(PIXEL_ID){
@@ -803,7 +802,6 @@ if(PIXEL_ID){
 document.querySelectorAll(".zbtn").forEach(a=>{
   a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(a.dataset.msg);
   a.target="_blank";a.rel="noopener";
-  a.addEventListener("click",()=>{if(window.fbq)fbq("track","Contact")});
 });
 /* abas */
 const tabs=document.querySelectorAll(".tab");
